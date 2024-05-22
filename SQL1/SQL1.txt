@@ -1,0 +1,70 @@
+ CREATE TABLE satışı_reallaşmış_məhsullar (id int,say int,deyer float);
+ INSERT INTO satışı_reallaşmış_məhsullar (id,say,deyer) values 
+    (1,3,5),
+    (2,56,78),
+    (3,45,76);
+ SELECT * FROM satışı_reallaşmış_məhsullar;
+ SELECT id, (say * deyer) AS QAZANC FROM satışı_reallaşmış_məhsullar;
+ ORDER BY QAZANC DESC;
+
+
+
+
+CREATE TABLE isciler (
+    ad VARCHAR(50),
+    maas FLOAT,
+    departament VARCHAR(50)
+);
+
+INSERT INTO isciler (ad, maas, departament) VALUES
+    ("Ehmed", 1500, "IT"),
+    ("Eli", 500, "satis"),
+    ("Alya", 430, "satis"),
+    ("zahire", 2500, "satis"),
+    ("veli", 700, "gomtuk");
+    
+
+SELECT * FROM isciler;
+SELECT ad,maas, departament FROM isciler WHERE maas>600 AND departament='satis'
+ORDER BY maas DESC
+ 
+
+
+
+
+ 
+
+CREATE TABLE kitablar (
+  ad varchar(50),
+  nesr_ili int,
+  janr varchar(50)
+);
+
+INSERT INTO kitablar (ad, nesr_ili, janr) VALUES
+    (" Cinayət və cəza", 1949, "felsefi psixoloji"),
+    ("Qürur və qərəz", 2019, "roman"),
+    ("Anna Karenina", 2017, "realizm"),
+    ("1984", 2500, "antiutopiya");
+    
+SELECT * FROM kitablar;
+SELECT janr,nesr_ili FROM kitablar WHERE nesr_ili >=2015 ORDER BY janr;
+
+
+
+
+CREATE TABLE filmler (
+  ad varchar(50),
+  tarix int,
+  ratinq float 
+);
+
+INSERT INTO filmler (ad, tarix, ratinq) VALUES
+    (" Polis gucu", 2024, 5.6),
+    ("Harry Potter", 2004, 7.9),
+    ("titanik", 1997, 7.9),
+    ("armageddon", 1983, 6.7);
+    
+    
+SELECT * FROM filmler;
+SELECT ad, tarix FROM filmler WHERE tarix>2000 ORDER BY tarix;
+SELECT ad, ratinq FROM filmler WHERE ratinq > 7 ORDER BY ratinq DESC
